@@ -59,7 +59,7 @@ public class Ej3 {
 	
 	// metodos 
 	
-	private boolean  esPrimo (int esteNumero) {
+	protected  boolean  esPrimo (int esteNumero) {
 		int divisor=2;
 		setNumero(esteNumero);
 		boolean primo=true;
