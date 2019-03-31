@@ -37,6 +37,8 @@ public class Ej1 {
 		return arreglo;
 	}
 	
+
+	
 	//constructores
 	
 	public Ej1() {
@@ -89,5 +91,15 @@ public class Ej1 {
 		System.out.println(" ");
 	}
 	
+	
+	public  void mostrarArreglo (int arregloRecibido[], int validos) {
+		setArreglo(arregloRecibido);
+		setValidos(validos);
+		for (int i =0; i< getValidos();i++) {
+			System.out.print( "|" + arreglo[i] + "|");
+			
+		}
+		System.out.println(" ");
+	}
 	
 }

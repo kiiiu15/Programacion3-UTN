@@ -1,19 +1,20 @@
 package paquete;
 
 public class Ej3 {
+	
 	private int numero;
-	private static int primosEncontrados;
-	private static int primosDeseados;
+	private int primosEncontrados;
+	private  int primosDeseados;
 	private int arregloDePrimos []; 
 	//getter & setters 
 	
-	private void setPrimosDeseados (int aEncontrar) {
+	private void setPrimosDeseados (int aEncontrar) {           ///son getter & seytter hace fakta explicarlo?
 		primosDeseados=aEncontrar;
 	}
 	private void setPrimosEncontrados (int encontrados) {
 		 primosEncontrados=encontrados;
 	}
-	private int getPrimosEncontratdos() {
+	private int getPrimosEncontrados() {
 		return primosEncontrados;
 	}
 	
@@ -29,19 +30,90 @@ public class Ej3 {
 		return arregloDePrimos;
 	}
 	
+	private void setNumero(int numeroPasado) {
+		if (numeroPasado>2) {
+			numero=numeroPasado;
+		}  else {
+			numero=2;
+		}
+	}
+	
+	private int getNumero() {
+		return numero;
+	}
+	
+	
 	//constructor
 	
-	public Ej3 () {
+	public Ej3 () {												//constructor vacio  sin sabes no teng=emos qeu buscar ningun primo y  todavia no encontramos ninmguna asique
 		setPrimosEncontrados(0);
 		setPrimosDeseados(0);
+		setArregloDePrimos();  									// el arreglo no tendrqa lugar pero nio  nos importa asi no escpa espacio al pepe
+	}
+	
+	public Ej3 (int buscadosPorDefecto) {
+		setPrimosDeseados(buscadosPorDefecto);                  //lo mismo pewro esta vez ya sabemos cuantos queremos buscar y el arreglo va aser del tamao justo
+		setPrimosEncontrados(0);
 		setArregloDePrimos();
 	}
 	
-	public Ej3 (int buscados) {
-		setPrimosDeseados(buscados);
-		setPrimosEncontrados(0);
+	// metodos 
+	
+	private boolean  esPrimo (int esteNumero) {
+		int divisor=2;
+		setNumero(esteNumero);
+		boolean primo=true;
+		while (divisor<getNumero() && primo) {
+			if (getNumero()%divisor == 0) {
+				primo=false;
+			}
+			divisor++;
+		}
+		return primo;
+	}
+	
+	public int [] encontrarPrimos () {
+		setNumero(2);
 		setArregloDePrimos();
+		while (getPrimosEncontrados() < getPrimosDeseados()) {
+			if (esPrimo(getNumero())) {
+				getArregloDePrimos()[getPrimosEncontrados()]=getNumero();
+				setPrimosEncontrados(getPrimosEncontrados()+1);
+			}
+			setNumero(getNumero()+1);
+		}
+		
+		return getArregloDePrimos();
 	}
 	 
-	 
+	
+	public int [] encontrarPrimos (int buscados) {
+		setNumero(2);
+		setPrimosDeseados(buscados);
+		setArregloDePrimos();
+		while (getPrimosEncontrados() < getPrimosDeseados()) {
+			if (esPrimo(getNumero())) {
+				getArregloDePrimos()[getPrimosEncontrados()]=getNumero();
+				setPrimosEncontrados(getPrimosEncontrados()+1);
+			}
+			setNumero(getNumero()+1);
+		}
+		
+		return getArregloDePrimos();
+	}
+	
+	public int [] encontrarPrimos (int buscados, int aPartirDeEsteNumero) {
+		setPrimosDeseados(buscados);
+		setNumero(aPartirDeEsteNumero);
+		setArregloDePrimos();
+		while (getPrimosEncontrados() < getPrimosDeseados()) {
+			if (esPrimo(getNumero())) {
+				getArregloDePrimos()[getPrimosEncontrados()]=getNumero();
+				setPrimosEncontrados(getPrimosEncontrados()+1);
+			}
+			setNumero(getNumero()+1);
+		}
+		
+		return getArregloDePrimos();
+	}
 }
