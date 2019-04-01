@@ -34,4 +34,20 @@ public class InAndOut {
 		//scan.close();
 		return aDevolver;
 	}
+	
+	public static float pedirFloat() {
+		Scanner scan=new Scanner(System.in);
+		float aDevolver=scan.nextFloat();
+		//scan.close();
+		return aDevolver;
+	}
+	
+	public static double pedirDoble() {
+		Scanner scan=new Scanner(System.in);
+		double aDevolver=scan.nextDouble();
+		//scan.close();
+		return aDevolver;
+	}
+	
+	
 }

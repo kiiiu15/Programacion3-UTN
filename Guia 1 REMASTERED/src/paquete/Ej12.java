@@ -7,25 +7,25 @@ public class Ej12 {
 	private int lado2;
 	private final  float  PI =(float) 3.14;
 	///getter & setters
-	private float getArea() {
+	protected float getArea() {
 		return area;
 	}
-	private void setArea(float area) {
+	protected void setArea(float area) {
 		this.area = area;
 	}
-	private int getLado1() {
+	protected int getLado1() {
 		return lado1;
 	}
-	private void setLado1(int lado1) {
+	protected void setLado1(int lado1) {
 		this.lado1 = lado1;
 	}
-	private int getLado2() {
+	protected int getLado2() {
 		return lado2;
 	}
-	private void setLado2(int lado2) {
+	protected void setLado2(int lado2) {
 		this.lado2 = lado2;
 	}
-	private float getPI() {
+	protected float getPI() {
 		return PI;
 	}
 	
@@ -81,7 +81,41 @@ public class Ej12 {
 		return getArea();
 	}
 	
-	private void pedirLados(int cantidad, String nombreLado,String nombreLado2) {
+	
+	
+	public  void calcularArea (int opcion ) {
+		do {
+			 
+			switch (opcion) {
+			case 1:
+					pedirLados(2, "base", "altura");
+					setArea(((float)getLado1()*(float)getLado2())/2);
+				break;
+			case 2:
+				pedirLados(2, "base", "altura");
+				setArea((float)getLado1()*(float)getLado2());
+				break;
+			case 3:
+				pedirLados(1, "", "");
+				setArea((float)Math.pow((float)getLado1(), 2));
+				break;
+			case 4:
+				pedirLados(1, "radio", "");
+				setArea((float)Math.pow((float) getLado1(),2)*getPI());
+				break;
+			case 0: 
+				
+				break;
+			default:
+				InAndOut.mostrarMensaje("Opcion Invalida. Por favor reingrese.");
+				opcion=-1;
+				break;
+			}
+		} while (opcion == -1);
+		
+	}
+	
+	protected void pedirLados(int cantidad, String nombreLado,String nombreLado2) {
 		for (int i=1; i<=cantidad;i++) {
 			
 			switch (i) {
