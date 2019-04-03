@@ -25,7 +25,7 @@ public class Ej2 {
 		
 	}
 	
-	public boolean esPar () {
+	protected boolean esPar () {
 		return getNumero()%2 == 0 ? true : false;
 		
 	}

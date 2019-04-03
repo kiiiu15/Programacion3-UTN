@@ -34,7 +34,7 @@ public class Ej17 {
 	//metodos
 	
 	private float deKMaMM () {
-		setPasajeDeUnidades(100);
+		setPasajeDeUnidades(1000);
 		setUnidadB(getUnidadA()*getPasajeDeUnidades());
 		return getUnidadB();
 	}

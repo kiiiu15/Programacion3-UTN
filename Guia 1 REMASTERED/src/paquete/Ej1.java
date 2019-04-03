@@ -1,39 +1,39 @@
 package paquete;
 import java.util.Random;
 public class Ej1 {
-	private static Random rand = new Random();
-	private static int dimension;
+	private  Random rand = new Random();
+	private  int dimension;
 	private int arreglo [];
 	private int validos;
 	
 	//getters & setters
-	private void setDimension (int dimensionRecibida) {
+	protected void setDimension (int dimensionRecibida) {
 		dimension=dimensionRecibida;
 	}
 	
-	private void setValidos (int validosRecibidos) {
+	protected void setValidos (int validosRecibidos) {
 		validos=validosRecibidos;
 	}
 	
-	private void setArreglo (int arregloRecibido[]) {
+	protected  void setArreglo (int arregloRecibido[]) {
 		arreglo=arregloRecibido;
 	}
 	
-	private  void setArreglo (int dimension) {
+	protected  void setArreglo (int dimension) {
 		arreglo=new int [dimension];
-		cargarArreglo();
+		cargarArregloAuto();
 	}
 	
 	
-	private int  getDimension () {
+	protected int  getDimension () {
 		return dimension;
 	}
 	
-	private int getValidos() {
+	protected int getValidos() {
 		return validos;
 	}
 	
-	public int [] getArreglo() {
+	public  int [] getArreglo() {
 		return arreglo;
 	}
 	
@@ -63,7 +63,7 @@ public class Ej1 {
 	
 	//metodos...
 	
-	public  void cargarArreglo () {
+	public  void cargarArregloAuto () {
 		for (int i =0; i<getDimension();i++) {
 			arreglo[i]=(int) Math.pow((double) rand.nextInt(50), (double) 2)%10; // la potenciua es para hacerlopsoitvo y el % para que no supere 10
 			setValidos(getValidos()+1);
