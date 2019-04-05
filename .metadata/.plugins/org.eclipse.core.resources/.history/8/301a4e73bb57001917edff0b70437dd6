@@ -1,0 +1,121 @@
+package paquetovich;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Venta {
+	private int cantidadDeBoletosComprados;
+	private enum metodoDePago{tarjetaDeCredito, tarjetaDeDebito, Efectivo, NoEspecificado }
+	private enum estado {Cerrada, Cancelada, EnProceso};
+	private String fechaYHora;
+	private estado estadoDElaventa;
+	private metodoDePago comoPagoElCliente;
+	private String nombreYApellidoDelComprador;
+	
+	private estado getEstadoDElaventa() {
+		return estadoDElaventa;
+	}
+
+
+	private void setEstadoDElaventa(estado estadoDElaventa) {
+		this.estadoDElaventa = estadoDElaventa;
+	}
+
+
+	public  metodoDePago getComoPagoElCliente() {
+		return comoPagoElCliente;
+	}
+
+
+	private  void setComoPagoElCliente(metodoDePago comoPagoElCliente) {
+		this.comoPagoElCliente = comoPagoElCliente;
+	}
+
+	private int precio;
+/// getters & setters
+	
+	private int getCantidadDeBoletosComprados() {
+		return cantidadDeBoletosComprados;
+	}
+
+
+	private void setCantidadDeBoletosComprados(int cantidadDeBoletosComprados) {
+		this.cantidadDeBoletosComprados = cantidadDeBoletosComprados;
+	}
+
+
+	private String getFechaYHora() {
+		return fechaYHora;
+	}
+
+
+	private int getPrecio() {
+		return precio;
+	}
+
+
+	private void setPrecio(int precio) {
+		this.precio = precio;
+	}
+	
+
+//constructor 
+	private String getNombreYApellidoDelComprador() {
+		return nombreYApellidoDelComprador;
+	}
+
+
+	private void setNombreYApellidoDelComprador(String nombreYApellidoDelComprador) {
+		this.nombreYApellidoDelComprador = nombreYApellidoDelComprador;
+	}
+
+
+	public Venta () {
+		setCantidadDeBoletosComprados(0);
+		setPrecio(0);
+		setEstadoDElaventa(estadoDElaventa.EnProceso);
+		setComoPagoElCliente(metodoDePago.NoEspecificado);
+		setNombreYApellidoDelComprador(" ");
+		
+		
+		
+	}
+
+	
+	//metodos
+	private   String obtenerFechaYHora () {
+			StringBuffer devolver=new StringBuffer();
+			Date date = new Date();
+			DateFormat hourdateFormat = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
+			devolver.append(hourdateFormat.format(date));
+			return devolver.toString();
+	}
+	
+	public float realizarVenta () {
+		
+	}
+	
+	public  void preguntarMetodoDePago () {
+		InAndOut.mostrarMensaje("Indique su metododo de Pago: 1. Efectivo 2. Debito 3. Credito");
+		do {
+			switch (InAndOut.pedirEntero()) {
+			case 1: 
+				setComoPagoElCliente(metodoDePago.Efectivo);
+				break;
+			case 2: 
+				setComoPagoElCliente(metodoDePago.tarjetaDeDebito);
+				break;
+			case 3: 
+				setComoPagoElCliente(metodoDePago.tarjetaDeCredito);
+				break;
+			default: 
+				InAndOut.mostrarMensaje("Opcion ingresada incorrecta. Reingrese");
+				break;
+			}
+		} while (getComoPagoElCliente()==metodoDePago.NoEspecificado);
+		
+	}
+}
+
+

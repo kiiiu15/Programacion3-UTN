@@ -15,6 +15,5 @@ INDEX VERSION 1.131+C:\Users\usuario\Documents\GitHub\Programacion3-UTN\.metadat
 2161747041.index
 3173990942.index
 146530134.index
-87155019.index
 2327184759.index
 1110334383.index
