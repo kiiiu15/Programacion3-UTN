@@ -214,7 +214,6 @@ public class MaquinaExprendedora {
 			InAndOut.mostrarMensaje("OUT OF ORDER");
 		}
 
-		
 		return aDevoler;
 	}
 	
