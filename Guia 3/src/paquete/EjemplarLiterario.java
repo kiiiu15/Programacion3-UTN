@@ -30,8 +30,27 @@ public class EjemplarLiterario extends Ejemplar {
 		this.cantidadDeCopias = cantidadDeCopias;
 	}
 	
+	public EjemplarLiterario () {
+		super(10);
+		setCantidadDeCopias(0);
+		setCantidadDeHojas(0);
+		setNombreDeLaObra("");
+		setAutorDelEjemplar(new Autor());
+	}
 	
-	public mostrarDatos () {
-		InAndOut.mostrarMensaje("El nombre del ejemplar es: "+ getNombreDeLaObra()+ "\n su autor es: "+ getAutorDelEjemplar().mostrarDatos());
+	public EjemplarLiterario (String nombrePasado, int cantidadDeHojasIndicados, int cantidadDeCopiasInidicadas, float precioDeLaObra, String nombreDelAutor, String apellidoDelAutor, String emailDelAutor, char genero, int cantidadDeObrasEscritas) {
+		super(precioDeLaObra);
+		setCantidadDeCopias(cantidadDeCopiasInidicadas);
+		setCantidadDeHojas(cantidadDeHojasIndicados);
+		setNombreDeLaObra(nombrePasado);
+		setAutorDelEjemplar(new Autor(nombreDelAutor, apellidoDelAutor, emailDelAutor, genero, cantidadDeObrasEscritas));
+	}
+	
+	
+	
+	public void mostrarDatos () {
+		InAndOut.mostrarMensaje("El nombre del ejemplar es : " + getNombreDeLaObra()+ "los datos del autor son: ");
+		getAutorDelEjemplar().mostarDatos();
+		InAndOut.mostrarMensaje("tiene " + getCantidadDeHojas() + "hojas y declaradas tiene aproximadamente "+ getCantidadDeCopias() +"copias" );
 	}
 }

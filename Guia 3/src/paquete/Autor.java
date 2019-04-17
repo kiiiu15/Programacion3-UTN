@@ -1,6 +1,6 @@
 package paquete;
 
-import paquete.Persona.genero;
+
 
 public class Autor extends Persona {
 	private int cantidadDeObras;
@@ -15,14 +15,14 @@ public class Autor extends Persona {
 	
 	
 	public Autor () {
-		super("","","",genero.x);
+		super("","","",'x');
 		setCantidadDeObras(0);
 		
 	}
 	
 	
-	public Autor (String nombre, String apellido, String email, genero generoPasado, int cantidadDeObrasIndicadas) {
-		super(nombre,apellido,email,generoPasado);
+	public Autor (String nombre, String apellido, String email, char genero, int cantidadDeObrasIndicadas) {
+		super(nombre,apellido,email,genero);
 		setCantidadDeObras(cantidadDeObrasIndicadas);
 	}
 	

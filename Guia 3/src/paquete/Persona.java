@@ -1,7 +1,7 @@
 package paquete;
 
 public class Persona {
-	protected enum  genero {m,f,x};
+	private enum  genero {m,f,x};
 	private String nombre;
 	private String apellido;
 	private String email;
@@ -40,27 +40,52 @@ public class Persona {
 		setNombre("");
 		setApellido("");
 		setEmail("");
-		setGeneroDeLaPersona(generoDeLaPersona.x);
+		setGeneroDeLaPersona(genero.x);
 		
 	}
 	
 	
-	public Persona (String nombre, String apellido, String email, genero generoPasado) {
+	public Persona (String nombre, String apellido, String email, char genero) {
 		
 		setNombre(nombre);
 		setApellido(apellido);
 		setEmail(email);
-		setGeneroDeLaPersona(generoPasado);
+		asignarGenero(genero);
 		
 	}
 	
+	private void asignarGenero (char generoPasado) {
+		int ok=0;
+		do {
+			switch (Character.toLowerCase(generoPasado)) {
+			case 'm':
+				setGeneroDeLaPersona(genero.m);
+				ok=1;
+				break;
+			case 'f':
+				setGeneroDeLaPersona(genero.f);
+				ok=1;
+				break;
+			case 'x':
+				setGeneroDeLaPersona(genero.x);
+				ok=1;
+				break;
+
+			default:
+				InAndOut.mostrarMensaje("El genero ingresado es incorrecto por favor indique nuevamente el genero teniendo en cuenta: M: masculino F: Femenino X: No especificado");
+				generoPasado=InAndOut.pedirCaracter();
+				break;
+			}
+		} while (ok==0);
+	}
+	
 	public String obtenerDatosDelaPersona () {
-		return obtenerNombreYApellido()+" - "+ obtenerContacto()+" - "+obtenerGenero();
+		return obtenerNombreYApellido();
 		
 	}
 	
 	private String obtenerNombreYApellido() {
-		return getNombre()+getApellido();
+		return getNombre()+" "+getApellido();
 	}
 	
 	private String obtenerContacto () {
