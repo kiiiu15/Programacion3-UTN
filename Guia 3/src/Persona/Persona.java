@@ -1,4 +1,6 @@
-package paquete;
+package Persona;
+
+import paquete.InAndOut;
 
 public class Persona {
 	private enum  genero {m,f,x};

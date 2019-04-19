@@ -1,6 +1,6 @@
 package paquete;
 
-
+import Persona.Persona;
 
 public class Autor extends Persona {
 	private int cantidadDeObras;
