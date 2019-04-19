@@ -98,7 +98,7 @@ public class Persona {
 		return getGeneroDeLaPersona().toString();
 	}
 
-	public void  mostarDatos() {
+	public void  mostrarDatos() {
 		InAndOut.mostrarMensaje("Su nombre y apellido es: "+ obtenerDatosDelaPersona()+"\n Su contacto es: " + obtenerContacto() +"\n Y su genero es "+ obtenerGenero());
 	}
 	

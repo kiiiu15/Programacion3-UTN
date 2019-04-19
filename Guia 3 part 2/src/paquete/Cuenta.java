@@ -57,7 +57,7 @@ public class Cuenta {
 		float saldito=0;
 		try {
 			getMutualExclusion().acquire();
-			saldo=getSaldo();
+			saldito=getSaldo();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			InAndOut.mostrarMensaje("A ocurrido un error por favor intente de nuevo.");
@@ -101,6 +101,8 @@ public class Cuenta {
 				InAndOut.mostrarMensaje("Su saldo es insuficiente");
 				aRetirar=0;
 			}
+			
+			setSaldo(getSaldo()-aRetirar);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			InAndOut.mostrarMensaje("A ocurrido un error por favor intente de nuevo.");
