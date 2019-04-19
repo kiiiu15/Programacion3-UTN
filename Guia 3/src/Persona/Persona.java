@@ -1,6 +1,6 @@
 package Persona;
 
-import paquete.InAndOut;
+import interacionConElUsuario.InAndOut;
 
 public class Persona {
 	private enum  genero {m,f,x};
@@ -101,5 +101,16 @@ public class Persona {
 	public void  mostarDatos() {
 		InAndOut.mostrarMensaje("Su nombre y apellido es: "+ obtenerDatosDelaPersona()+"\n Su contacto es: " + obtenerContacto() +"\n Y su genero es "+ obtenerGenero());
 	}
+	
+	public void modificaDatos () {
+		/// para pedirselos al usuario
+	}
+	
+	public void modificaDatos (String nuevoNombre, String nuevoApellido, String nuevoEmail, char nuevoGenero) {
+		setNombre(nuevoNombre);
+		setApellido(nuevoApellido);
+		setEmail(nuevoEmail);
+		asignarGenero(nuevoGenero);
+	} 
 
 }

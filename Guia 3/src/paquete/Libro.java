@@ -1,5 +1,7 @@
 package paquete;
 
+import interacionConElUsuario.InAndOut;
+
 public class Libro extends EjemplarLiterario {
 	private String isbn;
 
@@ -24,6 +26,19 @@ public class Libro extends EjemplarLiterario {
 	public void mostrarDatos() {
 		super.mostrarDatos();
 		InAndOut.mostrarMensaje("Y su isbn es: "+ getIsbn());
+	}
+	
+	public void mostrarDatosDelAutor() {
+		super.mostrarDatosDelAutor();
+	}
+	
+	public void mostrarInfoSobreEllibro () {
+		InAndOut.mostrarMensaje("El libro: ");
+		mostrarNombreDelEjemplar();
+		InAndOut.mostrarMensaje("Del autor: ");
+		mostrarNombreDelAutorDelEjemplar();
+		InAndOut.mostrarMensaje("Se vende a un precio de: ");
+		mostrarPrecioDelEjemplar();
 	}
 
 }

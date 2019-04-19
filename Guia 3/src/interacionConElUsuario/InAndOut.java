@@ -1,4 +1,4 @@
-package paquete;
+package interacionConElUsuario;
 import java.util.Scanner;
 
 public class InAndOut {

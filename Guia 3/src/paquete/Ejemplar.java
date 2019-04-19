@@ -1,5 +1,7 @@
 package paquete;
 
+import interacionConElUsuario.InAndOut;
+
 public class Ejemplar {
 	private float precio;
 
@@ -27,6 +29,16 @@ public class Ejemplar {
 	
 	public void mostrarDatos () {
 		InAndOut.mostrarMensaje("Su precio es de: "+ getPrecio());
+	}
+	
+	
+	public void modificarDatos (float nuevoPrecio) {
+		setPrecio(nuevoPrecio);
+	}
+	
+	
+	public void mostrarPrecioDelEjemplar() {
+		InAndOut.mostrarMensaje(""+getPrecio());
 	}
 	
 	

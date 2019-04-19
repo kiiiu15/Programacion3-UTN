@@ -1,5 +1,7 @@
 package paquete;
 
+import interacionConElUsuario.InAndOut;
+
 public class EjemplarLiterario extends Ejemplar {
 	private String nombreDeLaObra;
 	private Autor autorDelEjemplar;
@@ -53,4 +55,58 @@ public class EjemplarLiterario extends Ejemplar {
 		getAutorDelEjemplar().mostarDatos();
 		InAndOut.mostrarMensaje("tiene " + getCantidadDeHojas() + "hojas y declaradas tiene aproximadamente "+ getCantidadDeCopias() +"copias" );
 	}
+	
+	public void mostrarDatosDelAutor() {
+		getAutorDelEjemplar().modificaDatos();
+	}
+	
+	public void modificarDatos() {
+		//para pedirle al usuario
+	}
+	
+	public void modificarDatos(int nuevaCantidadDeHojas) {
+		setCantidadDeHojas(nuevaCantidadDeHojas);	}
+	
+	public void modificarDatos(int nuevaCantidadDeHojas, int nuevaCantidadDeCopias) {
+		modificarDatos(nuevaCantidadDeHojas);
+		setCantidadDeCopias(nuevaCantidadDeCopias);
+		
+	}
+	
+	public void modificarDatos(int nuevaCantidadDeHojas, int nuevaCantidadDeCopias, String nuevoNombre ) {
+		modificarDatos(nuevaCantidadDeHojas,nuevaCantidadDeCopias);
+		setNombreDeLaObra(nuevoNombre);
+	}
+	
+	public void modificarDatos (Autor nuevoAutor) {
+		setAutorDelEjemplar(nuevoAutor);
+	}
+	
+	public void modificarDatos (int nuevaCantidadDeHojas, int nuevaCantidadDeCopias, String nuevoNombre, Autor nuevoAutor) {
+		modificarDatos(nuevaCantidadDeHojas,nuevaCantidadDeCopias, nuevoNombre);
+		modificarDatos(nuevoAutor);
+	}
+	
+	public void modificarDatos(int nuevaCantidadDeHojas, int nuevaCantidadDeCopias, String nuevoNombre, String nuevoNombreDelAutor, String nuevoApellidoDelAutor, String nuevoEmailDelAutor, char nuevoGeneroDelAutor) {
+		modificarDatos(nuevaCantidadDeHojas, nuevaCantidadDeCopias, nuevoNombre);
+		getAutorDelEjemplar().modificaDatos(nuevoNombreDelAutor, nuevoApellidoDelAutor, nuevoEmailDelAutor, nuevoGeneroDelAutor);
+	}
+	
+	public void modificarDatos(String nuevoNombreDeAutor, String nuevoApellidoDelAutor, String nuevoEmailDelAutor, char nuevoGeneroDelAuor) {
+		getAutorDelEjemplar().modificaDatos(nuevoNombreDeAutor, nuevoApellidoDelAutor, nuevoEmailDelAutor, nuevoGeneroDelAuor);
+	}
+	
+	public void modificarDatos(int nuevaCantidadDeCopias, float nuevoPrecio) {
+		super.modificarDatos(nuevoPrecio);
+		setCantidadDeCopias(nuevaCantidadDeCopias);
+	}
+	
+	public void mostrarNombreDelEjemplar () {
+		InAndOut.mostrarMensaje(getNombreDeLaObra());
+	}
+	
+	public void mostrarNombreDelAutorDelEjemplar() {
+		getAutorDelEjemplar().mostrarNombreDelAutor();
+	}
+	
 }
