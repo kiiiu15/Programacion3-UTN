@@ -1,5 +1,4 @@
-package cuentav2;
-import Persona.*;
+package Persona;
 import interacionConElUsuario.InAndOut;
 
 public class Titular  extends Persona{
@@ -31,7 +30,7 @@ public class Titular  extends Persona{
 	
 	
 	public void mostrarDatos() {
-		super.mostarDatos();
+		super.mostrarDatos();
 		InAndOut.mostrarMensaje("Y su id de cuenta es "+getIdTitular());
 	}
 	

@@ -1,6 +1,6 @@
 package cuentav2;
 
-import Persona.Persona;
+import Persona.*;
 import paquete.Cuenta;
 import interacionConElUsuario.InAndOut;
 
