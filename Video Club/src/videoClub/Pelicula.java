@@ -49,7 +49,7 @@ public class Pelicula extends elementoParaAlquiler {
 	}
 	
 	public void crearCopia() {
-		 getCopias().add(new Copia (""+getCopias().size() , new Pelicula (getTitulo(), getDirector().obtenerNombre(),getDirector().obtenerApellido(), getGenero(), getDurecionEnMinutos() ))) ;	
+		 getCopias().add(new Copia (getIdElemento()+"N"+getCopias().size()+1 , new Pelicula (getTitulo(), getDirector().obtenerNombre(),getDirector().obtenerApellido(), getGenero(), getDurecionEnMinutos() ))) ;	
 	}
 	@Override
 	protected void asignarID(String idPasada) {
