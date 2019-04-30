@@ -11,7 +11,6 @@ public class Main {
 		miEmpleado.mostrarDatos();
 		miEmpleado2.mostrarDatos();
 		miEmpleado.aumentarSalarioEnPorcentaje(15);
-		miEmpleado.mostrarDatos();
 		InAndOut.mostrarMensaje("El salario anual seria de: "+miEmpleado.calcularSalarioAnual());
 	}
 
